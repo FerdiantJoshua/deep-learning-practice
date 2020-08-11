@@ -1,8 +1,10 @@
 import re
 from typing import List, Union
 
-# Complete punctuation from string.punctuation: !"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~
+from unidecode import unidecode
 
+
+# Complete punctuation from string.punctuation: !"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~
 class Tokenizer:
     NON_ASCII_REGEX = re.compile(r"[^\x00-\x7F\u2013]")
     PUNCTUATIONS = '!"#$%&()*+/;<=>@?[\\]^_`{|}~'
